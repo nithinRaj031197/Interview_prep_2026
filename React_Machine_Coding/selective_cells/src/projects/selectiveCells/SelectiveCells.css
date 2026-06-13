@@ -1,0 +1,32 @@
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  user-select: none;
+  background-color: black;
+  gap: 1px;
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.selected {
+  background-color: rgb(198, 156, 198);
+}
+
+.selection-box {
+  position: absolute;
+  border: 1px dashed #333;
+  background-color: rgba(128, 0, 128, 0.15);
+  pointer-events: none;
+  z-index: 10;
+}

@@ -1,0 +1,9 @@
+.app {
+  min-height: 100vh;
+}
+
+.app__loading {
+  padding: 2rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
