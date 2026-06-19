@@ -47,15 +47,15 @@ Frontend machine coding rounds test how you **build UI under pressure** — stat
 
 ```
 Interview Prep/
-├── React_Machine_Coding/
-│   └── selective_cells/          # Machine coding hub (Vite app)
-│       └── src/
-│           ├── config/           # Project registry + source file map
-│           ├── pages/Home/       # Landing page
-│           ├── components/       # CodeViewer, ProjectLayout
-│           └── projects/         # One folder per challenge
-│               ├── _template/    # Copy to start a new project
-│               └── selectiveCells/
+├── React_Machine_Coding/         # Machine coding hub (Vite app)
+│   └── src/
+│       ├── config/               # Project registry + source file map
+│       ├── pages/Home/           # Landing page
+│       ├── components/           # CodeViewer, ProjectLayout
+│       └── projects/             # One folder per challenge
+│           ├── _template/        # Copy to start a new project
+│           ├── selectiveCells/
+│           └── pixelArtDrawing/
 ├── JS/                           # JavaScript prep (planned)
 └── react/                        # Additional React notes (planned)
 ```
@@ -67,6 +67,7 @@ Interview Prep/
 | Project | Status | Topics |
 |---------|--------|--------|
 | **Selective Cells** | In progress | Drag selection, grid, mouse events |
+| **Pixel Art Drawing** | In progress | Draw/erase modes, color picker, canvas |
 | Todo List | Upcoming | State, forms, lists |
 | Autocomplete | Upcoming | Debounce, keyboard, API |
 | Infinite Scroll | Upcoming | Pagination, Intersection Observer |
@@ -77,7 +78,7 @@ Interview Prep/
 ## Quick start
 
 ```bash
-cd React_Machine_Coding/selective_cells
+cd React_Machine_Coding
 npm install
 npm run dev
 ```
@@ -102,7 +103,7 @@ npm run lint     # ESLint
 4. Register source files in `src/config/projectSources.ts` for the Code tab
 5. Set `status` to `"in-progress"` when ready to appear on the home page
 
-See [React_Machine_Coding/selective_cells/README.md](./React_Machine_Coding/selective_cells/README.md) for the full walkthrough.
+See [React_Machine_Coding/README.md](./React_Machine_Coding/README.md) for the full walkthrough.
 
 ---
 

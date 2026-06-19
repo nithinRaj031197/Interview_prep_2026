@@ -30,10 +30,8 @@ src/
 │   └── CodeViewer/              # Syntax highlighting, file tabs, copy
 └── projects/
     ├── _template/               # Scaffold for new challenges
-    └── selectiveCells/          # Example: drag-to-select grid
-        ├── SelectiveCells.tsx
-        ├── SelectiveCells.css
-        └── utilities/constants.ts
+    ├── selectiveCells/          # Drag-to-select grid
+    └── pixelArtDrawing/         # Pixel art canvas with draw/erase
 ```
 
 ### Design decisions
@@ -234,7 +232,7 @@ Override detection per file:
 | ID | Route | Status |
 |----|-------|--------|
 | `selective-cells` | `/projects/selective-cells` | In progress |
-| `pixel-art-drawing` | `/projects/pixel-art-drawing` | In progress (scaffold) |
+| `pixel-art-drawing` | `/projects/pixel-art-drawing` | In progress |
 
 ---
 
