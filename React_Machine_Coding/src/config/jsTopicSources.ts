@@ -1,3 +1,5 @@
+import chunkQuestion from "@repo-js/chunk/question.md?raw";
+import chunkSolution from "@repo-js/chunk/solution.js?raw";
 import makeCounterQuestion from "@repo-js/makeCounter/question.md?raw";
 import makeCounterSolution from "@repo-js/makeCounter/solution.js?raw";
 import debounceQuestion from "@repo-js/debounce/question.md?raw";
@@ -20,6 +22,16 @@ export type JsTopicContent = {
  * Add ?raw imports above when you create a new topic folder.
  */
 export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
+  chunk: {
+    question: chunkQuestion,
+    files: [
+      {
+        label: "solution.js",
+        path: "JS/chunk/solution.js",
+        content: chunkSolution,
+      },
+    ],
+  },
   "make-counter": {
     question: makeCounterQuestion,
     files: [

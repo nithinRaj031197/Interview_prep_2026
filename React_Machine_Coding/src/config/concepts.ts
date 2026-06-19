@@ -31,6 +31,7 @@ export const CONCEPT_GROUPS: ConceptMeta[] = [
   { id: "performance", label: "Performance", icon: "⚡" },
   { id: "accessibility", label: "Accessibility", icon: "♿" },
   { id: "objects", label: "Objects & Recursion", icon: "🔗" },
+  { id: "arrays", label: "Arrays", icon: "📦" },
 ];
 
 export const getConceptMeta = (conceptId: string) =>

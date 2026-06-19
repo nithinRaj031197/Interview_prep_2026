@@ -18,6 +18,16 @@ export type JsTopic = {
  */
 export const JS_TOPICS: JsTopic[] = [
   {
+    id: "chunk",
+    title: "Chunk",
+    description: "Split an array into groups of a given size.",
+    path: "/js/chunk",
+    status: "completed",
+    concept: "arrays",
+    difficulty: "easy",
+    tags: ["arrays", "loops"],
+  },
+  {
     id: "make-counter",
     title: "Make Counter",
     description: "Return a function that increments and returns a counter on each call.",
