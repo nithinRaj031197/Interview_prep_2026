@@ -1,0 +1,88 @@
+.compact-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.compact-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #0f172a;
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+}
+
+.compact-card__link:hover {
+  border-color: #6366f1;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
+  transform: translateY(-1px);
+}
+
+.compact-card--upcoming {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.65rem;
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  background: #f8fafc;
+  font-size: 0.8125rem;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.compact-card__name {
+  white-space: nowrap;
+}
+
+.compact-card__diff {
+  flex-shrink: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.compact-card__diff--easy {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.compact-card__diff--medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.compact-card__diff--hard {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.compact-card__done {
+  color: #16a34a;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.compact-card__star {
+  color: #f59e0b;
+  font-size: 0.7rem;
+}
+
+.compact-card .topic-pin {
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 0.75rem;
+  border-radius: 6px;
+}

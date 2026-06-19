@@ -1,7 +1,10 @@
 import { useState, type ReactNode } from "react";
 import { Link } from "react-router-dom";
 import CodeViewer from "../CodeViewer/CodeViewer";
+import TopicPinButton from "../TopicPinButton/TopicPinButton";
 import { getProjectSourceFiles } from "../../config/projectSources";
+import { useTopicStorage } from "../../hooks/useTopicStorage";
+import { useTopicVisit } from "../../hooks/useTopicVisit";
 import "./ProjectLayout.css";
 
 type ProjectTab = "demo" | "code";
@@ -15,15 +18,28 @@ type ProjectLayoutProps = {
 const ProjectLayout = ({ title, projectId, children }: ProjectLayoutProps) => {
   const [activeTab, setActiveTab] = useState<ProjectTab>("demo");
   const sourceFiles = getProjectSourceFiles(projectId);
+  const { togglePin, isPinned } = useTopicStorage();
+  const path = `/projects/${projectId}`;
+
+  useTopicVisit({ track: "react", id: projectId, title, path });
 
   return (
     <div className="project-layout">
       <header className="project-layout__header">
         <Link to="/" className="project-layout__back">
-          ← All Projects
+          ← Dashboard
         </Link>
         <div className="project-layout__heading">
-          <h1 className="project-layout__title">{title}</h1>
+          <div className="project-layout__title-row">
+            <h1 className="project-layout__title">{title}</h1>
+            <TopicPinButton
+              track="react"
+              topicId={projectId}
+              isPinned={isPinned("react", projectId)}
+              onToggle={togglePin}
+              label={title}
+            />
+          </div>
           <div className="project-layout__tabs" role="tablist" aria-label="Project views">
             <button
               type="button"

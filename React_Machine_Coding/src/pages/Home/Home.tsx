@@ -1,202 +1,129 @@
+import { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
-import { getAvailableJsTopics, JS_TOPICS } from "../../config/jsTopics";
+import CompactTopicCard from "../../components/CompactTopicCard/CompactTopicCard";
 import {
-  MACHINE_CODING_PROJECTS,
-  type ProjectStatus,
-} from "../../config/projects";
+  filterConceptDashboard,
+  getConceptDashboard,
+} from "../../config/topicIndex";
+import { useDebouncedValue } from "../../hooks/useDebouncedValue";
+import { useTopicStorage } from "../../hooks/useTopicStorage";
 import "./Home.css";
 
-const STATUS_LABEL: Record<ProjectStatus, string> = {
-  completed: "Completed",
-  "in-progress": "In Progress",
-  upcoming: "Coming Soon",
-};
-
 const Home = () => {
-  const availableProjects = MACHINE_CODING_PROJECTS.filter(
-    (project) => project.status !== "upcoming",
+  const [query, setQuery] = useState("");
+  const debouncedQuery = useDebouncedValue(query, 300);
+  const { recent, pinned, togglePin, isPinned } = useTopicStorage();
+
+  const conceptGroups = useMemo(() => getConceptDashboard(), []);
+  const visibleGroups = useMemo(
+    () => filterConceptDashboard(conceptGroups, debouncedQuery),
+    [conceptGroups, debouncedQuery],
   );
-  const upcomingProjects = MACHINE_CODING_PROJECTS.filter(
-    (project) => project.status === "upcoming",
-  );
-  const availableJsTopics = getAvailableJsTopics();
-  const upcomingJsTopics = JS_TOPICS.filter(
-    (topic) => topic.status === "upcoming",
-  );
+
+  const isFiltering = debouncedQuery.trim().length > 0;
 
   return (
     <div className="home">
       <header className="home__header">
         <p className="home__eyebrow">Interview Prep</p>
-        <h1 className="home__title">Practice Hub</h1>
+        <h1 className="home__title">Topic Dashboard</h1>
         <p className="home__subtitle">
-          React machine coding demos and JavaScript interview questions in one
-          place — run live UI, read questions, and inspect your solutions.
+          Scan by concept, warm up easy → hard. Search is a shortcut when you
+          need it.
         </p>
       </header>
 
-      <section className="home__section">
-        <div className="home__section-header">
-          <h2 className="home__section-title">React Machine Coding</h2>
-          <span className="home__section-badge home__section-badge--react">
-            Demo + Code
-          </span>
-        </div>
-        <div className="home__grid">
-          {availableProjects.map((project) => (
-            <Link
-              key={project.id}
-              to={project.path}
-              className="project-card project-card--active"
-            >
-              <div className="project-card__top">
-                <h3 className="project-card__title">{project.title}</h3>
-                <span
-                  className={`project-card__status project-card__status--${project.status}`}
-                >
-                  {STATUS_LABEL[project.status]}
-                </span>
-              </div>
-              <p className="project-card__description">{project.description}</p>
-              <div className="project-card__tags">
-                {project.tags.map((tag) => (
-                  <span key={tag} className="project-card__tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
+      <div className="home__search-wrap">
+        <input
+          id="topic-search"
+          type="search"
+          className="home__search"
+          placeholder="Quick search…"
+          value={query}
+          onChange={(event) => setQuery(event.target.value)}
+        />
+      </div>
 
-      <section className="home__section">
-        <div className="home__section-header">
-          <h2 className="home__section-title">JavaScript Practice</h2>
-          <span className="home__section-badge home__section-badge--js">
-            Question + Solution
-          </span>
-        </div>
-        <div className="home__grid">
-          {availableJsTopics.map((topic) => (
-            <Link
-              key={topic.id}
-              to={topic.path}
-              className="project-card project-card--active project-card--js"
-            >
-              <div className="project-card__top">
-                <h3 className="project-card__title">{topic.title}</h3>
-                <span
-                  className={`project-card__status project-card__status--${topic.status}`}
+      {(recent.length > 0 || pinned.length > 0) && !isFiltering && (
+        <div className="home__shortcuts">
+          {recent.length > 0 && (
+            <div className="home__shortcut-row">
+              <span className="home__shortcut-label">Recent</span>
+              {recent.map((item) => (
+                <Link key={item.key} to={item.path} className="home__chip">
+                  {item.title}
+                </Link>
+              ))}
+            </div>
+          )}
+          {pinned.length > 0 && (
+            <div className="home__shortcut-row">
+              <span className="home__shortcut-label">Pinned</span>
+              {pinned.map((item) => (
+                <Link
+                  key={item.key}
+                  to={item.path}
+                  className="home__chip home__chip--pinned"
                 >
-                  {STATUS_LABEL[topic.status]}
-                </span>
-              </div>
-              <p className="project-card__description">{topic.description}</p>
-              <div className="project-card__tags">
-                {topic.tags.map((tag) => (
-                  <span key={tag} className="project-card__tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </Link>
-          ))}
-          {upcomingJsTopics.map((topic) => (
-            <article
-              key={topic.id}
-              className="project-card project-card--upcoming"
-              aria-disabled="true"
-            >
-              <div className="project-card__top">
-                <h3 className="project-card__title">{topic.title}</h3>
-                <span className="project-card__status project-card__status--upcoming">
-                  {STATUS_LABEL[topic.status]}
-                </span>
-              </div>
-              <p className="project-card__description">{topic.description}</p>
-              <div className="project-card__tags">
-                {topic.tags.map((tag) => (
-                  <span key={tag} className="project-card__tag">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </article>
-          ))}
+                  ★ {item.title}
+                </Link>
+              ))}
+            </div>
+          )}
         </div>
-      </section>
-
-      {upcomingProjects.length > 0 && (
-        <section className="home__section">
-          <h2 className="home__section-title">Upcoming React Projects</h2>
-          <div className="home__grid">
-            {upcomingProjects.map((project) => (
-              <article
-                key={project.id}
-                className="project-card project-card--upcoming"
-                aria-disabled="true"
-              >
-                <div className="project-card__top">
-                  <h3 className="project-card__title">{project.title}</h3>
-                  <span className="project-card__status project-card__status--upcoming">
-                    {STATUS_LABEL[project.status]}
-                  </span>
-                </div>
-                <p className="project-card__description">
-                  {project.description}
-                </p>
-                <div className="project-card__tags">
-                  {project.tags.map((tag) => (
-                    <span key={tag} className="project-card__tag">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
-        </section>
       )}
 
-      <section className="home__structure">
-        <h2 className="home__section-title">Architecture</h2>
-        <pre className="home__code-block">{`Interview Prep/
-├── JS/                              # JS questions + solutions (you edit here)
-│   ├── _template/
-│   │   ├── question.md
-│   │   └── solution.js
-│   └── debounce/
-│       ├── question.md
-│       └── solution.js
-└── React_Machine_Coding/            # This hub app
-    └── src/
-        ├── config/
-        │   ├── projects.ts          # React MC registry
-        │   ├── projectSources.ts
-        │   ├── jsTopics.ts          # JS topic registry
-        │   └── jsTopicSources.ts    # ?raw imports from ../JS
-        ├── projects/                # React MC components (live demos)
-        └── pages/JsTopic/           # Question + Solution viewer`}</pre>
-        <div className="home__tracks">
-          <div className="home__track">
-            <h3>React Machine Coding</h3>
-            <ol className="home__steps">
-              <li>Copy <code>src/projects/_template/</code></li>
-              <li>Register in <code>projects.ts</code> + <code>projectSources.ts</code></li>
-              <li>Route: <code>/projects/your-slug</code> → Demo | Code</li>
-            </ol>
-          </div>
-          <div className="home__track">
-            <h3>JavaScript Practice</h3>
-            <ol className="home__steps">
-              <li>Copy <code>JS/_template/</code> → <code>JS/yourTopic/</code></li>
-              <li>Register in <code>jsTopics.ts</code> + <code>jsTopicSources.ts</code></li>
-              <li>Route: <code>/js/your-topic</code> → Question | Solution</li>
-            </ol>
-          </div>
-        </div>
-      </section>
+      <div className="home__legend">
+        <span>
+          <strong>E</strong> Easy
+        </span>
+        <span>
+          <strong>M</strong> Medium
+        </span>
+        <span>
+          <strong>H</strong> Hard
+        </span>
+        <span>
+          <strong>✓</strong> Done
+        </span>
+        <span>
+          <strong>★</strong> Pinned
+        </span>
+      </div>
+
+      {isFiltering && visibleGroups.length === 0 && (
+        <p className="home__empty">No topics match &ldquo;{debouncedQuery}&rdquo;</p>
+      )}
+
+      <div className="home__concepts">
+        {visibleGroups.map((group) => (
+          <section key={group.id} className="concept-group">
+            <div className="concept-group__header">
+              <div className="concept-group__title-wrap">
+                <span className="concept-group__icon">{group.icon}</span>
+                <h2 className="concept-group__title">{group.label}</h2>
+                <span className="concept-group__count">{group.topics.length}</span>
+              </div>
+              {!isFiltering && group.total > 0 && (
+                <span className="concept-group__progress">
+                  {group.completed}/{group.total} done
+                </span>
+              )}
+            </div>
+
+            <div className="concept-group__cards">
+              {group.topics.map((topic) => (
+                <CompactTopicCard
+                  key={`${topic.track}:${topic.id}`}
+                  topic={topic}
+                  isPinned={isPinned(topic.track, topic.id)}
+                  onTogglePin={togglePin}
+                />
+              ))}
+            </div>
+          </section>
+        ))}
+      </div>
     </div>
   );
 };

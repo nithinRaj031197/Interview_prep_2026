@@ -2,33 +2,51 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import CodeViewer from "../CodeViewer/CodeViewer";
 import QuestionPanel from "../QuestionPanel/QuestionPanel";
+import TopicPinButton from "../TopicPinButton/TopicPinButton";
 import type { JsSourceFile } from "../../config/jsTopicSources";
+import { useTopicStorage } from "../../hooks/useTopicStorage";
+import { useTopicVisit } from "../../hooks/useTopicVisit";
 import "./JsTopicLayout.css";
 
 type JsTopicTab = "question" | "solution";
 
 type JsTopicLayoutProps = {
+  topicId: string;
   title: string;
   question: string;
   sourceFiles: JsSourceFile[];
 };
 
 const JsTopicLayout = ({
+  topicId,
   title,
   question,
   sourceFiles,
 }: JsTopicLayoutProps) => {
   const [activeTab, setActiveTab] = useState<JsTopicTab>("question");
+  const { togglePin, isPinned } = useTopicStorage();
+  const path = `/js/${topicId}`;
+
+  useTopicVisit({ track: "js", id: topicId, title, path });
 
   return (
     <div className="js-topic-layout">
       <header className="js-topic-layout__header">
         <Link to="/" className="js-topic-layout__back">
-          ← Home
+          ← Dashboard
         </Link>
         <div className="js-topic-layout__heading">
           <p className="js-topic-layout__eyebrow">JavaScript</p>
-          <h1 className="js-topic-layout__title">{title}</h1>
+          <div className="js-topic-layout__title-row">
+            <h1 className="js-topic-layout__title">{title}</h1>
+            <TopicPinButton
+              track="js"
+              topicId={topicId}
+              isPinned={isPinned("js", topicId)}
+              onToggle={togglePin}
+              label={title}
+            />
+          </div>
           <div
             className="js-topic-layout__tabs"
             role="tablist"

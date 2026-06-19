@@ -14,6 +14,7 @@ const JsTopicPage = () => {
 
   return (
     <JsTopicLayout
+      topicId={topicId}
       title={topic.title}
       question={content.question}
       sourceFiles={content.files}

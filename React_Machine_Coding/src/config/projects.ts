@@ -1,4 +1,5 @@
 import { lazy, type ComponentType, type LazyExoticComponent } from "react";
+import type { Difficulty } from "./concepts";
 
 export type ProjectStatus = "completed" | "in-progress" | "upcoming";
 
@@ -8,6 +9,8 @@ export type MachineCodingProject = {
   description: string;
   path: string;
   status: ProjectStatus;
+  concept: string;
+  difficulty: Difficulty;
   tags: string[];
 };
 
@@ -36,6 +39,8 @@ export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
     description: "Drag to select a rectangular region of grid cells.",
     path: "/projects/selective-cells",
     status: "in-progress",
+    concept: "grid-canvas",
+    difficulty: "medium",
     tags: ["drag", "grid", "mouse events"],
   },
   {
@@ -44,6 +49,8 @@ export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
     description: "Paint on a pixel grid with color picker and eraser.",
     path: "/projects/pixel-art-drawing",
     status: "in-progress",
+    concept: "grid-canvas",
+    difficulty: "hard",
     tags: ["canvas", "grid", "mouse events", "state"],
   },
   {
@@ -52,6 +59,8 @@ export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
     description: "Add, toggle, and delete todos with local state.",
     path: "/projects/todo-list",
     status: "upcoming",
+    concept: "state",
+    difficulty: "easy",
     tags: ["state", "forms", "lists"],
   },
   {
@@ -60,6 +69,8 @@ export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
     description: "Search input with debounced suggestions dropdown.",
     path: "/projects/autocomplete",
     status: "upcoming",
+    concept: "state",
+    difficulty: "medium",
     tags: ["debounce", "keyboard", "api"],
   },
   {
@@ -68,6 +79,8 @@ export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
     description: "Paginated list that loads more items on scroll.",
     path: "/projects/infinite-scroll",
     status: "upcoming",
+    concept: "performance",
+    difficulty: "medium",
     tags: ["pagination", "intersection observer"],
   },
   {
@@ -76,6 +89,8 @@ export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
     description: "Accessible modal with focus trap and escape to close.",
     path: "/projects/modal-dialog",
     status: "upcoming",
+    concept: "accessibility",
+    difficulty: "hard",
     tags: ["accessibility", "portal", "focus"],
   },
 ];

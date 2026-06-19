@@ -29,7 +29,16 @@
   gap: 1rem;
 }
 
-.project-layout__title {
+.project-layout__title-row,
+.js-topic-layout__title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.project-layout__title,
+.js-topic-layout__title-row .js-topic-layout__title {
   margin: 0;
   font-size: 1.5rem;
   font-weight: 600;

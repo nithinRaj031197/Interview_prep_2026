@@ -1,0 +1,24 @@
+.topic-pin {
+  flex-shrink: 0;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #fff;
+  color: #94a3b8;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s, background 0.15s;
+}
+
+.topic-pin:hover {
+  border-color: #fbbf24;
+  color: #f59e0b;
+}
+
+.topic-pin--active {
+  border-color: #fbbf24;
+  background: #fffbeb;
+  color: #f59e0b;
+}

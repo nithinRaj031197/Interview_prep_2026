@@ -18,6 +18,6 @@ JS/
 
 1. Copy `_template/` → `JS/yourTopic/`
 2. Edit `question.md` and `solution.js`
-3. Register in `React_Machine_Coding/src/config/jsTopics.ts`
+3. Register in `React_Machine_Coding/src/config/jsTopics.ts` (`concept`, `difficulty`, `status`)
 4. Add `?raw` imports in `React_Machine_Coding/src/config/jsTopicSources.ts`
 5. Set `status: "in-progress"` when ready to appear on the home page

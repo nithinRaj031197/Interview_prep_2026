@@ -1,4 +1,5 @@
 import type { ProjectStatus } from "./projects";
+import type { Difficulty } from "./concepts";
 
 export type JsTopic = {
   id: string;
@@ -6,6 +7,8 @@ export type JsTopic = {
   description: string;
   path: string;
   status: ProjectStatus;
+  concept: string;
+  difficulty: Difficulty;
   tags: string[];
 };
 
@@ -20,6 +23,8 @@ export const JS_TOPICS: JsTopic[] = [
     description: "Return a function that increments and returns a counter on each call.",
     path: "/js/make-counter",
     status: "in-progress",
+    concept: "closures",
+    difficulty: "easy",
     tags: ["closures", "higher-order functions"],
   },
   {
@@ -28,6 +33,8 @@ export const JS_TOPICS: JsTopic[] = [
     description: "Delay a function until after a wait period with no new calls.",
     path: "/js/debounce",
     status: "in-progress",
+    concept: "closures",
+    difficulty: "medium",
     tags: ["closures", "timers", "utilities"],
   },
   {
@@ -36,6 +43,8 @@ export const JS_TOPICS: JsTopic[] = [
     description: "Limit how often a function can run over time.",
     path: "/js/throttle",
     status: "upcoming",
+    concept: "closures",
+    difficulty: "hard",
     tags: ["closures", "timers", "utilities"],
   },
   {
@@ -44,6 +53,8 @@ export const JS_TOPICS: JsTopic[] = [
     description: "Recursively clone nested objects and arrays.",
     path: "/js/deep-clone",
     status: "upcoming",
+    concept: "objects",
+    difficulty: "hard",
     tags: ["recursion", "objects"],
   },
 ];
