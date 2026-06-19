@@ -47,6 +47,10 @@ Frontend machine coding rounds test how you **build UI under pressure** — stat
 
 ```
 Interview Prep/
+├── frontend-system-design/       # FE system design curriculum (markdown, 17 topics + 2-month plan)
+│   ├── LEARNING_PATH.md          # Week-by-week FE → Architect schedule
+│   ├── case-studies/             # E-commerce, social feed, mock interviews
+│   └── …                         # rendering, state, observability, deployment, etc.
 ├── JS/                           # JavaScript questions + solutions (see JS/README.md)
 │   ├── _template/
 │   └── debounce/
