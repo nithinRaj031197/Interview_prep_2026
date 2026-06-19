@@ -47,16 +47,15 @@ Frontend machine coding rounds test how you **build UI under pressure** — stat
 
 ```
 Interview Prep/
-├── React_Machine_Coding/         # Machine coding hub (Vite app)
+├── JS/                           # JavaScript questions + solutions (see JS/README.md)
+│   ├── _template/
+│   └── debounce/
+├── React_Machine_Coding/         # Unified practice hub (Vite app)
 │   └── src/
-│       ├── config/               # Project registry + source file map
-│       ├── pages/Home/           # Landing page
-│       ├── components/           # CodeViewer, ProjectLayout
-│       └── projects/             # One folder per challenge
-│           ├── _template/        # Copy to start a new project
-│           ├── selectiveCells/
-│           └── pixelArtDrawing/
-├── JS/                           # JavaScript prep (planned)
+│       ├── projects/             # React MC live demos
+│       └── config/
+│           ├── jsTopics.ts       # JS topic registry
+│           └── jsTopicSources.ts # Links to ../JS via Vite alias
 └── react/                        # Additional React notes (planned)
 ```
 
@@ -68,6 +67,7 @@ Interview Prep/
 |---------|--------|--------|
 | **Selective Cells** | In progress | Drag selection, grid, mouse events |
 | **Pixel Art Drawing** | In progress | Draw/erase modes, color picker, canvas |
+| **Debounce** (JS) | In progress | Closures, timers, utilities |
 | Todo List | Upcoming | State, forms, lists |
 | Autocomplete | Upcoming | Debounce, keyboard, API |
 | Infinite Scroll | Upcoming | Pagination, Intersection Observer |

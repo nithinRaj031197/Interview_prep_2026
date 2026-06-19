@@ -38,9 +38,53 @@
 }
 
 .home__section-title {
-  margin: 0 0 1.25rem;
+  margin: 0;
   font-size: 1.125rem;
   font-weight: 600;
+  color: #1e293b;
+}
+
+.home__section-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.home__section-badge {
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.home__section-badge--react {
+  background: #eef2ff;
+  color: #4338ca;
+}
+
+.home__section-badge--js {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.project-card--js:hover {
+  border-color: #059669;
+  box-shadow: 0 8px 24px rgba(5, 150, 105, 0.12);
+}
+
+.home__tracks {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.home__track h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.95rem;
   color: #1e293b;
 }
 

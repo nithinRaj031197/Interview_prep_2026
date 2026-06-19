@@ -18,7 +18,8 @@ const CodeViewer = ({ files }: CodeViewerProps) => {
       <div className="code-viewer code-viewer--empty">
         <p>No source files registered for this project yet.</p>
         <p className="code-viewer__hint">
-          Add entries in <code>src/config/projectSources.ts</code>
+          Add entries in <code>src/config/projectSources.ts</code> or{" "}
+          <code>src/config/jsTopicSources.ts</code>
         </p>
       </div>
     );

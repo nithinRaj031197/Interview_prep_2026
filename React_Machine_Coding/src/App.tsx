@@ -6,6 +6,7 @@ import {
   LAZY_PROJECT_COMPONENTS,
 } from "./config/projects";
 import Home from "./pages/Home/Home";
+import JsTopicPage from "./pages/JsTopic/JsTopicPage";
 import "./App.css";
 
 const availableProjects = getAvailableProjects();
@@ -40,6 +41,7 @@ const App = () => {
               />
             );
           })}
+          <Route path="/js/:topicId" element={<JsTopicPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>
