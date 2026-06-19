@@ -1,0 +1,83 @@
+.pixel-art-drawing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem;
+}
+
+.canvas {
+  display: inline-block;
+  border: 2px solid #333;
+  user-select: none;
+  cursor: crosshair;
+}
+
+.canvas__row {
+  display: flex;
+}
+
+.canvas__cell {
+  width: var(--cell-size);
+  height: var(--cell-size);
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  cursor: crosshair;
+}
+
+.canvas__cell:focus-visible {
+  outline: 2px solid #228be6;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.25rem;
+}
+
+.toolbar__modes {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.toolbar__mode {
+  min-width: 70px;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background: #fff;
+  color: #000;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.toolbar__mode--active {
+  background: #000;
+  color: #fff;
+}
+
+.toolbar__colors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  align-items: center;
+}
+
+.toolbar__color {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.toolbar__color:focus-visible {
+  outline: 2px solid #228be6;
+  outline-offset: 2px;
+}
