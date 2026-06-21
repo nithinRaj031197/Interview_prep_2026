@@ -50,6 +50,17 @@ export const JS_TOPICS: JsTopic[] = [
     tags: ["arrays", "loops", "predicates"],
   },
     {
+    id: "fill",
+    title: "Fill",
+    description:
+      "Mutate an array by filling a range with a value, with index normalization.",
+    path: "/js/fill",
+    status: "completed",
+    concept: "arrays",
+    difficulty: "easy",
+    tags: ["arrays", "loops", "mutation"],
+  },
+    {
     id: "make-counter",
     title: "Make Counter",
     description: "Return a function that increments and returns a counter on each call.",
