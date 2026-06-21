@@ -39,6 +39,17 @@ export const JS_TOPICS: JsTopic[] = [
     tags: ["arrays", "loops", "predicates"],
   },
     {
+    id: "drop-while",
+    title: "Drop While",
+    description:
+      "Slice an array by dropping leading elements while a predicate is true.",
+    path: "/js/drop-while",
+    status: "completed",
+    concept: "arrays",
+    difficulty: "easy",
+    tags: ["arrays", "loops", "predicates"],
+  },
+    {
     id: "make-counter",
     title: "Make Counter",
     description: "Return a function that increments and returns a counter on each call.",

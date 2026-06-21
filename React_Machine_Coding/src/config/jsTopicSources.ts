@@ -2,6 +2,8 @@ import chunkQuestion from "@repo-js/chunk/question.md?raw";
 import chunkSolution from "@repo-js/chunk/solution.js?raw";
 import dropRightWhileQuestion from "@repo-js/dropRightWhile/question.md?raw";
 import dropRightWhileSolution from "@repo-js/dropRightWhile/solution.js?raw";
+import dropWhileQuestion from "@repo-js/dropWhile/question.md?raw";
+import dropWhileSolution from "@repo-js/dropWhile/solution.js?raw";
 import makeCounterQuestion from "@repo-js/makeCounter/question.md?raw";
 import makeCounterSolution from "@repo-js/makeCounter/solution.js?raw";
 import debounceQuestion from "@repo-js/debounce/question.md?raw";
@@ -41,6 +43,16 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
         label: "solution.js",
         path: "JS/dropRightWhile/solution.js",
         content: dropRightWhileSolution,
+      },
+    ],
+  },
+    "drop-while": {
+    question: dropWhileQuestion,
+    files: [
+      {
+        label: "solution.js",
+        path: "JS/dropWhile/solution.js",
+        content: dropWhileSolution,
       },
     ],
   },
