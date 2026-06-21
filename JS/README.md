@@ -9,9 +9,12 @@ JS/
 ├── _template/
 │   ├── question.md      # Interview question (markdown)
 │   └── solution.js      # Your solution
-└── debounce/
-    ├── question.md
-    └── solution.js
+├── debounce/            # Closures & utilities
+├── chunk/               # Arrays
+└── myCall/              # Polyfills (Function.prototype.call)
+```
+
+Topics are grouped on the hub by **concept** (Arrays, Closures, Polyfills, etc.).
 ```
 
 ## Add a new topic

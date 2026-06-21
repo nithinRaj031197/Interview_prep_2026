@@ -121,6 +121,17 @@ export const JS_TOPICS: JsTopic[] = [
     concept: "objects",
     difficulty: "hard",
     tags: ["recursion", "objects"],
+  },,
+  {
+    id: "my-call",
+    title: "Function.prototype.call",
+    description:
+      "Polyfill call by temporarily attaching the function to the context object.",
+    path: "/js/my-call",
+    status: "completed",
+    concept: "polyfills",
+    difficulty: "medium",
+    tags: ["polyfills", "this", "prototype"],
   },
 ];
 

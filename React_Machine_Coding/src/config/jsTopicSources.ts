@@ -14,17 +14,40 @@ import makeCounterQuestion from "@repo-js/makeCounter/question.md?raw";
 import makeCounterSolution from "@repo-js/makeCounter/solution.js?raw";
 import debounceQuestion from "@repo-js/debounce/question.md?raw";
 import debounceSolution from "@repo-js/debounce/solution.js?raw";
+import myCallQuestion from "@repo-js/myCall/question.md?raw";
+import myCallSolution from "@repo-js/myCall/solution.js?raw";
+
 
 export type JsSourceFile = {
   label: string;
   path: string;
   content: string;
-  language?: string;
+  language?: string;,
+  "my-call": {
+    question: myCallQuestion,
+    files: [
+      {
+        label: "solution.js",
+        path: "JS/myCall/solution.js",
+        content: myCallSolution,
+      },
+    ],
+  },
 };
 
 export type JsTopicContent = {
   question: string;
-  files: JsSourceFile[];
+  files: JsSourceFile[];,
+  "my-call": {
+    question: myCallQuestion,
+    files: [
+      {
+        label: "solution.js",
+        path: "JS/myCall/solution.js",
+        content: myCallSolution,
+      },
+    ],
+  },
 };
 
 /**
@@ -109,6 +132,16 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
         label: "solution.js",
         path: "JS/debounce/solution.js",
         content: debounceSolution,
+      },
+    ],
+  },,
+  "my-call": {
+    question: myCallQuestion,
+    files: [
+      {
+        label: "solution.js",
+        path: "JS/myCall/solution.js",
+        content: myCallSolution,
       },
     ],
   },
