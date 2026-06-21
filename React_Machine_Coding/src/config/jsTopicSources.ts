@@ -8,6 +8,8 @@ import fillQuestion from "@repo-js/fill/question.md?raw";
 import fillSolution from "@repo-js/fill/solution.js?raw";
 import findIndexQuestion from "@repo-js/findIndex/question.md?raw";
 import findIndexSolution from "@repo-js/findIndex/solution.js?raw";
+import findLastIndexQuestion from "@repo-js/findLastIndex/question.md?raw";
+import findLastIndexSolution from "@repo-js/findLastIndex/solution.js?raw";
 import makeCounterQuestion from "@repo-js/makeCounter/question.md?raw";
 import makeCounterSolution from "@repo-js/makeCounter/solution.js?raw";
 import debounceQuestion from "@repo-js/debounce/question.md?raw";
@@ -77,6 +79,16 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
         label: "solution.js",
         path: "JS/findIndex/solution.js",
         content: findIndexSolution,
+      },
+    ],
+  },
+    "find-last-index": {
+    question: findLastIndexQuestion,
+    files: [
+      {
+        label: "solution.js",
+        path: "JS/findLastIndex/solution.js",
+        content: findLastIndexSolution,
       },
     ],
   },

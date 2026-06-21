@@ -72,6 +72,17 @@ export const JS_TOPICS: JsTopic[] = [
     tags: ["arrays", "loops", "predicates"],
   },
     {
+    id: "find-last-index",
+    title: "Find Last Index",
+    description:
+      "Return the index of the last matching element when searching right to left.",
+    path: "/js/find-last-index",
+    status: "completed",
+    concept: "arrays",
+    difficulty: "easy",
+    tags: ["arrays", "loops", "predicates"],
+  },
+    {
     id: "make-counter",
     title: "Make Counter",
     description: "Return a function that increments and returns a counter on each call.",
