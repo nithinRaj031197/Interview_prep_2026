@@ -28,6 +28,17 @@ export const JS_TOPICS: JsTopic[] = [
     tags: ["arrays", "loops"],
   },
   {
+    id: "drop-right-while",
+    title: "Drop Right While",
+    description:
+      "Slice an array by dropping trailing elements while a predicate is true.",
+    path: "/js/drop-right-while",
+    status: "completed",
+    concept: "arrays",
+    difficulty: "easy",
+    tags: ["arrays", "loops", "predicates"],
+  },
+    {
     id: "make-counter",
     title: "Make Counter",
     description: "Return a function that increments and returns a counter on each call.",
