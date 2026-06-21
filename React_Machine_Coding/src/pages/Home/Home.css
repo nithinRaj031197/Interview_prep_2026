@@ -33,6 +33,55 @@
   color: #64748b;
 }
 
+.home__fsd-entry {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid #c7d2fe;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #eef2ff 0%, #f8fafc 100%);
+  text-decoration: none;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.home__fsd-entry:hover {
+  border-color: #6366f1;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.12);
+}
+
+.home__fsd-entry-icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.home__fsd-entry-body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.home__fsd-entry-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #312e81;
+}
+
+.home__fsd-entry-meta {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.home__fsd-entry-arrow {
+  flex-shrink: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #6366f1;
+}
+
 .home__search-wrap {
   margin-bottom: 1.25rem;
 }

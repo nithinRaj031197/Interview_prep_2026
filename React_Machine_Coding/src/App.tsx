@@ -1,12 +1,15 @@
 import { Suspense } from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import ProjectLayout from "./components/ProjectLayout/ProjectLayout";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import {
   getAvailableProjects,
   LAZY_PROJECT_COMPONENTS,
 } from "./config/projects";
 import Home from "./pages/Home/Home";
 import JsTopicPage from "./pages/JsTopic/JsTopicPage";
+import SystemDesignHub from "./pages/SystemDesign/SystemDesignHub";
+import SystemDesignPage from "./pages/SystemDesign/SystemDesignPage";
 import "./App.css";
 
 const availableProjects = getAvailableProjects();
@@ -14,6 +17,7 @@ const availableProjects = getAvailableProjects();
 const App = () => {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -42,6 +46,8 @@ const App = () => {
             );
           })}
           <Route path="/js/:topicId" element={<JsTopicPage />} />
+          <Route path="/system-design" element={<SystemDesignHub />} />
+          <Route path="/system-design/:topicId" element={<SystemDesignPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </div>

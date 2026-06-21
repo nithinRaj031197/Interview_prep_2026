@@ -12,6 +12,10 @@ This repo is **markdown-first** — read it on GitHub, in your editor, or offlin
 
 **[LEARNING_PATH.md](./LEARNING_PATH.md)** — 8-week plan from foundations → architect level, with daily routine, project milestones, and interview prep strategy.
 
+**[ROADMAP.md](./ROADMAP.md)** — maps the full 16-area architect checklist to topics in this repo (nothing missed).
+
+**[system-design-interviews](./system-design-interviews/README.md)** — **RADIO framework** (Requirements → Architecture → Data → Interface → Optimizations) for interview rounds.
+
 ---
 
 ## Who this is for
@@ -58,56 +62,47 @@ Follow folders **in order** for a linear path, or jump by interest. The four pha
 
 ### Phase 1 — Think in systems, not screens
 
-1. **[foundations](./foundations/README.md)** — Requirements, constraints, non-functional goals, FE vs BE boundaries
-2. **[component-architecture](./component-architecture/README.md)** — Composition, state ownership, module boundaries
-3. **[design-patterns](./design-patterns/README.md)** — Container/presentational, compound components, adapters
+1. **[core-web-fundamentals](./core-web-fundamentals/README.md)** — JS runtime, browser pipeline, networking
+2. **[foundations](./foundations/README.md)** — Requirements, constraints, non-functional goals, FE vs BE boundaries
+3. **[component-architecture](./component-architecture/README.md)** — Composition, state ownership, module boundaries
+4. **[design-patterns](./design-patterns/README.md)** — Container/presentational, compound components, adapters
+5. **[react-internals](./react-internals/README.md)** — Fiber, reconciliation, concurrent React
 
 ### Phase 2 — Ship reliable products
 
-4. **[state-management](./state-management/README.md)** — Local vs global, Context, Zustand, server state
-5. **[performance](./performance/README.md)** — Core Web Vitals, rendering, caching, bundle strategy
-6. **[data-layer](./data-layer/README.md)** — Fetching, normalization, optimistic UI, real-time
-7. **[security](./security/README.md)** — XSS, CSP, auth tokens, supply chain
-8. **[testing](./testing/README.md)** — Pyramid, contract tests, visual regression, E2E strategy
-9. **[accessibility](./accessibility/README.md)** — WCAG, keyboard, screen readers, inclusive design
+6. **[state-management](./state-management/README.md)** — Local vs global, Context, Zustand, server state
+7. **[typescript-architecture](./typescript-architecture/README.md)** — Types at scale for large apps
+8. **[css-styling-architecture](./css-styling-architecture/README.md)** — Layout, Tailwind vs CSS-in-JS, BEM
+9. **[performance](./performance/README.md)** — Core Web Vitals, rendering, caching, bundle strategy
+10. **[data-layer](./data-layer/README.md)** — Fetching, BFF, GraphQL vs REST, optimistic UI
+11. **[security](./security/README.md)** — XSS, CSRF, CSP, auth tokens, supply chain
+12. **[testing](./testing/README.md)** — Pyramid, contract tests, visual regression, E2E strategy
+13. **[accessibility](./accessibility/README.md)** — WCAG, keyboard, screen readers, inclusive design
+14. **[ui-system-patterns](./ui-system-patterns/README.md)** — Infinite scroll, autocomplete, grid, upload, DnD
+15. **[real-time-systems](./real-time-systems/README.md)** — WebSockets, SSE, polling, live UX
 
 ### Phase 3 — Scale teams and codebases
 
-10. **[rendering-strategies](./rendering-strategies/README.md)** — CSR, SSR, SSG, ISR, streaming, tradeoffs
-11. **[tooling](./tooling/README.md)** — Monorepos, CI/CD, feature flags
-12. **[design-system](./design-system/README.md)** — Tokens, components, governance, adoption
-13. **[scalability](./scalability/README.md)** — Micro-frontends, federation, org topology
-14. **[advanced-topics](./advanced-topics/README.md)** — Offline-first, i18n, edge, AI UX
+16. **[rendering-strategies](./rendering-strategies/README.md)** — CSR, SSR, SSG, ISR, streaming, tradeoffs
+17. **[nextjs-framework](./nextjs-framework/README.md)** — App Router, RSC, ISR, edge, SEO
+18. **[tooling](./tooling/README.md)** — Monorepos, Vite/Webpack, CI/CD, feature flags
+19. **[design-system](./design-system/README.md)** — Tokens, components, governance, adoption
+20. **[scalability](./scalability/README.md)** — Micro-frontends, federation, org topology
+21. **[pwa-offline](./pwa-offline/README.md)** — Service workers, offline cache, installability
+22. **[advanced-topics](./advanced-topics/README.md)** — i18n, edge, AI UX
 
 ### Phase 4 — Operate and design at scale
 
-15. **[observability](./observability/README.md)** — RUM, errors, Web Vitals, session replay
-16. **[deployment](./deployment/README.md)** — Pipelines, CDN, preview, canary, rollback
-17. **[case-studies](./case-studies/README.md)** — E-commerce, social feed, mock interview walkthroughs
+23. **[observability](./observability/README.md)** — RUM, errors, Web Vitals, session replay
+24. **[deployment](./deployment/README.md)** — Pipelines, CDN, preview, canary, rollback
+25. **[architect-mindset](./architect-mindset/README.md)** — Tradeoffs, scale, failure modes, interview thinking
+26. **[case-studies](./case-studies/README.md)** — E-commerce, social feed, mock interview walkthroughs
 
 ---
 
-## Topic index (17 topics)
+## Topic index (26 topics + start guides)
 
-| # | Folder | One-line focus |
-|---|--------|----------------|
-| 1 | [foundations](./foundations/README.md) | Problem framing & NFRs |
-| 2 | [component-architecture](./component-architecture/README.md) | Structure & boundaries |
-| 3 | [design-patterns](./design-patterns/README.md) | Reusable interaction models |
-| 4 | [state-management](./state-management/README.md) | Local, global & server state |
-| 5 | [performance](./performance/README.md) | Speed & resource budgets |
-| 6 | [data-layer](./data-layer/README.md) | Client data architecture |
-| 7 | [security](./security/README.md) | Threat model for the browser |
-| 8 | [testing](./testing/README.md) | Confidence at scale |
-| 9 | [accessibility](./accessibility/README.md) | Usable by everyone |
-| 10 | [rendering-strategies](./rendering-strategies/README.md) | CSR, SSR, SSG, ISR |
-| 11 | [tooling](./tooling/README.md) | Developer experience & delivery |
-| 12 | [design-system](./design-system/README.md) | Shared UI platform |
-| 13 | [scalability](./scalability/README.md) | Many teams, one product |
-| 14 | [advanced-topics](./advanced-topics/README.md) | Specialized architectures |
-| 15 | [observability](./observability/README.md) | Production visibility |
-| 16 | [deployment](./deployment/README.md) | Safe, frequent releases |
-| 17 | [case-studies](./case-studies/README.md) | End-to-end system designs |
+See **[ROADMAP.md](./ROADMAP.md)** for the full 16-area architect checklist mapped to each folder.
 
 ---
 

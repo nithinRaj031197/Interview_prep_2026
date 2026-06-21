@@ -10,6 +10,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@repo-js": path.resolve(__dirname, "../JS"),
+      "@repo-fsd": path.resolve(__dirname, "../frontend-system-design"),
     },
   },
 });

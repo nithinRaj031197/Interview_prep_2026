@@ -10,6 +10,13 @@ Interactive practice app for frontend machine coding interviews. Browse challeng
 Home (/)  ──►  Project page (/projects/:slug)
                     ├── Demo tab   → live interactive UI
                     └── Code tab   → highlighted source files
+
+              JS topic (/js/:topicId)
+                    ├── Question tab
+                    └── Solution tab
+
+              System design (/system-design/:topicId)
+                    └── Markdown curriculum reader
 ```
 
 Each challenge is a self-contained module under `src/projects/`. The hub handles routing, layout, and code display — you focus on the component logic.
@@ -36,7 +43,7 @@ src/
 
 ### Design decisions
 
-- **Lazy loading** — projects are code-split via `React.lazy()` so the bundle stays small
+- **Three tracks** — React machine coding, JavaScript topics (`../JS/`), and frontend system design (`../frontend-system-design/`)
 - **Central registry** — `projects.ts` is the single source of truth for what's live vs upcoming
 - **Raw source imports** — Vite `?raw` imports keep the Code tab in sync with actual files
 - **Language auto-detection** — file extension maps to Prism language (tsx, css, json, …)

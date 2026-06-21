@@ -22,7 +22,7 @@
 1. Read one case **without** looking at the solution outline.
 2. Sketch your design in 25 minutes (timer).
 3. Compare with the outline — note gaps.
-4. Practice explaining aloud using the mock template in [LEARNING_PATH](../LEARNING_PATH.md).
+4. Practice explaining aloud using **[RADIO](../system-design-interviews/README.md)** — Requirements → Architecture → Data → Interface → Optimizations.
 
 ---
 
@@ -227,6 +227,7 @@ Always end with:
 
 ## Related topics
 
+- [system-design-interviews](../system-design-interviews/README.md) — RADIO framework
 - [rendering-strategies](../rendering-strategies/README.md)
 - [performance](../performance/README.md)
 - [data-layer](../data-layer/README.md)

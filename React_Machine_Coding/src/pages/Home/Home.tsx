@@ -5,6 +5,7 @@ import {
   filterConceptDashboard,
   getConceptDashboard,
 } from "../../config/topicIndex";
+import { getSystemDesignTopicCount } from "../../config/systemDesignTopics";
 import { useDebouncedValue } from "../../hooks/useDebouncedValue";
 import { useTopicStorage } from "../../hooks/useTopicStorage";
 import "./Home.css";
@@ -13,6 +14,7 @@ const Home = () => {
   const [query, setQuery] = useState("");
   const debouncedQuery = useDebouncedValue(query, 300);
   const { recent, pinned, togglePin, isPinned } = useTopicStorage();
+  const fsdTopicCount = getSystemDesignTopicCount();
 
   const conceptGroups = useMemo(() => getConceptDashboard(), []);
   const visibleGroups = useMemo(
@@ -32,6 +34,25 @@ const Home = () => {
           need it.
         </p>
       </header>
+
+      {!isFiltering && (
+        <Link to="/system-design" className="home__fsd-entry">
+          <span className="home__fsd-entry-icon" aria-hidden="true">
+            🏛️
+          </span>
+          <span className="home__fsd-entry-body">
+            <strong className="home__fsd-entry-title">
+              Frontend System Design
+            </strong>
+            <span className="home__fsd-entry-meta">
+              {fsdTopicCount} topics in order · beginner → architect
+            </span>
+          </span>
+          <span className="home__fsd-entry-arrow" aria-hidden="true">
+            →
+          </span>
+        </Link>
+      )}
 
       <div className="home__search-wrap">
         <input
