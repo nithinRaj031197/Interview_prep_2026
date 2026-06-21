@@ -15,7 +15,6 @@ JS/
 ```
 
 Topics are grouped on the hub by **concept** (Arrays, Closures, Polyfills, etc.).
-```
 
 ## Add a new topic
 

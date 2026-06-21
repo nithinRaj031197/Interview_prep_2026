@@ -16,38 +16,19 @@ import debounceQuestion from "@repo-js/debounce/question.md?raw";
 import debounceSolution from "@repo-js/debounce/solution.js?raw";
 import myCallQuestion from "@repo-js/myCall/question.md?raw";
 import myCallSolution from "@repo-js/myCall/solution.js?raw";
-
+import myApplyQuestion from "@repo-js/myApply/question.md?raw";
+import myApplySolution from "@repo-js/myApply/solution.js?raw";
 
 export type JsSourceFile = {
   label: string;
   path: string;
   content: string;
-  language?: string;,
-  "my-call": {
-    question: myCallQuestion,
-    files: [
-      {
-        label: "solution.js",
-        path: "JS/myCall/solution.js",
-        content: myCallSolution,
-      },
-    ],
-  },
+  language?: string;
 };
 
 export type JsTopicContent = {
   question: string;
-  files: JsSourceFile[];,
-  "my-call": {
-    question: myCallQuestion,
-    files: [
-      {
-        label: "solution.js",
-        path: "JS/myCall/solution.js",
-        content: myCallSolution,
-      },
-    ],
-  },
+  files: JsSourceFile[];
 };
 
 /**
@@ -75,7 +56,7 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
       },
     ],
   },
-    "drop-while": {
+  "drop-while": {
     question: dropWhileQuestion,
     files: [
       {
@@ -85,7 +66,7 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
       },
     ],
   },
-    fill: {
+  fill: {
     question: fillQuestion,
     files: [
       {
@@ -95,7 +76,7 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
       },
     ],
   },
-    "find-index": {
+  "find-index": {
     question: findIndexQuestion,
     files: [
       {
@@ -105,7 +86,7 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
       },
     ],
   },
-    "find-last-index": {
+  "find-last-index": {
     question: findLastIndexQuestion,
     files: [
       {
@@ -115,7 +96,7 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
       },
     ],
   },
-    "make-counter": {
+  "make-counter": {
     question: makeCounterQuestion,
     files: [
       {
@@ -134,7 +115,7 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
         content: debounceSolution,
       },
     ],
-  },,
+  },
   "my-call": {
     question: myCallQuestion,
     files: [
@@ -142,6 +123,16 @@ export const JS_TOPIC_CONTENT: Record<string, JsTopicContent> = {
         label: "solution.js",
         path: "JS/myCall/solution.js",
         content: myCallSolution,
+      },
+    ],
+  },
+  "my-apply": {
+    question: myApplyQuestion,
+    files: [
+      {
+        label: "solution.js",
+        path: "JS/myApply/solution.js",
+        content: myApplySolution,
       },
     ],
   },

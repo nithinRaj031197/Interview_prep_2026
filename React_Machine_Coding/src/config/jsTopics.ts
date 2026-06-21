@@ -38,7 +38,7 @@ export const JS_TOPICS: JsTopic[] = [
     difficulty: "easy",
     tags: ["arrays", "loops", "predicates"],
   },
-    {
+  {
     id: "drop-while",
     title: "Drop While",
     description:
@@ -49,7 +49,7 @@ export const JS_TOPICS: JsTopic[] = [
     difficulty: "easy",
     tags: ["arrays", "loops", "predicates"],
   },
-    {
+  {
     id: "fill",
     title: "Fill",
     description:
@@ -60,7 +60,7 @@ export const JS_TOPICS: JsTopic[] = [
     difficulty: "easy",
     tags: ["arrays", "loops", "mutation"],
   },
-    {
+  {
     id: "find-index",
     title: "Find Index",
     description:
@@ -71,7 +71,7 @@ export const JS_TOPICS: JsTopic[] = [
     difficulty: "easy",
     tags: ["arrays", "loops", "predicates"],
   },
-    {
+  {
     id: "find-last-index",
     title: "Find Last Index",
     description:
@@ -82,7 +82,7 @@ export const JS_TOPICS: JsTopic[] = [
     difficulty: "easy",
     tags: ["arrays", "loops", "predicates"],
   },
-    {
+  {
     id: "make-counter",
     title: "Make Counter",
     description: "Return a function that increments and returns a counter on each call.",
@@ -121,13 +121,24 @@ export const JS_TOPICS: JsTopic[] = [
     concept: "objects",
     difficulty: "hard",
     tags: ["recursion", "objects"],
-  },,
+  },
   {
     id: "my-call",
     title: "Function.prototype.call",
     description:
       "Polyfill call by temporarily attaching the function to the context object.",
     path: "/js/my-call",
+    status: "completed",
+    concept: "polyfills",
+    difficulty: "medium",
+    tags: ["polyfills", "this", "prototype"],
+  },
+  {
+    id: "my-apply",
+    title: "Function.prototype.apply",
+    description:
+      "Polyfill apply by invoking the function with an array of arguments.",
+    path: "/js/my-apply",
     status: "completed",
     concept: "polyfills",
     difficulty: "medium",
