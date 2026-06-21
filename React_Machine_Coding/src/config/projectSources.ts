@@ -4,6 +4,9 @@ import selectiveCellsConstants from "../projects/selectiveCells/utilities/consta
 import pixelArtDrawingTsx from "../projects/pixelArtDrawing/PixelArtDrawing.tsx?raw";
 import pixelArtDrawingCss from "../projects/pixelArtDrawing/PixelArtDrawing.css?raw";
 import pixelArtDrawingConstants from "../projects/pixelArtDrawing/utilities/constants.ts?raw";
+import memoryGameTsx from "../projects/memoryGame/MemoryGame.tsx?raw";
+import memoryGameCss from "../projects/memoryGame/MemoryGame.css?raw";
+import memoryGameConstants from "../projects/memoryGame/utilities/constants.ts?raw";
 
 export type ProjectSourceFile = {
   label: string;
@@ -50,6 +53,23 @@ export const PROJECT_SOURCE_FILES: Record<string, ProjectSourceFile[]> = {
       label: "constants.ts",
       path: "projects/pixelArtDrawing/utilities/constants.ts",
       content: pixelArtDrawingConstants,
+    },
+  ],
+  "memory-game": [
+    {
+      label: "MemoryGame.tsx",
+      path: "projects/memoryGame/MemoryGame.tsx",
+      content: memoryGameTsx,
+    },
+    {
+      label: "MemoryGame.css",
+      path: "projects/memoryGame/MemoryGame.css",
+      content: memoryGameCss,
+    },
+    {
+      label: "constants.ts",
+      path: "projects/memoryGame/utilities/constants.ts",
+      content: memoryGameConstants,
     },
   ],
 };

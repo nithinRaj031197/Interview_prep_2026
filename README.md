@@ -71,6 +71,7 @@ Interview Prep/
 |---------|--------|--------|
 | **Selective Cells** | In progress | Drag selection, grid, mouse events |
 | **Pixel Art Drawing** | In progress | Draw/erase modes, color picker, canvas |
+| **Memory Game** | Completed | Card flip, pair matching, configurable grid |
 | **Debounce** (JS) | In progress | Closures, timers, utilities |
 | Todo List | Upcoming | State, forms, lists |
 | Autocomplete | Upcoming | Debounce, keyboard, API |

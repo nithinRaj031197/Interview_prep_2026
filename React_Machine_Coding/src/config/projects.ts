@@ -30,6 +30,7 @@ export const PROJECT_COMPONENTS: Record<
     import("../projects/selectiveCells/SelectiveCells"),
   "pixel-art-drawing": () =>
     import("../projects/pixelArtDrawing/PixelArtDrawing"),
+  "memory-game": () => import("../projects/memoryGame/MemoryGame"),
 };
 
 export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
@@ -52,6 +53,16 @@ export const MACHINE_CODING_PROJECTS: MachineCodingProject[] = [
     concept: "grid-canvas",
     difficulty: "hard",
     tags: ["canvas", "grid", "mouse events", "state"],
+  },
+  {
+    id: "memory-game",
+    title: "Memory Game",
+    description: "Flip cards and match emoji pairs before the board clears.",
+    path: "/projects/memory-game",
+    status: "completed",
+    concept: "state",
+    difficulty: "medium",
+    tags: ["state", "grid", "game logic", "timers"],
   },
   {
     id: "todo-list",
